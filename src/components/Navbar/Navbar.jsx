@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import SearchIcon from "@material-ui/icons/Search";
 import { Badge } from "@material-ui/core";
