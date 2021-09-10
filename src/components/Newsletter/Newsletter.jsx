@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import SendIcon from "@material-ui/icons/Send";
 import { mobile } from "../../responsive";
+import { useHistory } from "react-router";
 const Container = styled.div`
   height: 60vh;
   background-color: #fcf5f5;
@@ -17,8 +18,7 @@ const Description = styled.div`
   font-size: 24px;
   font-weight: 300;
   margin-bottom: 20px;
-  ${mobile({ textAlign:"center" })}
-
+  ${mobile({ textAlign: "center" })}
 `;
 const InputContainer = styled.div`
   width: 50%;
@@ -27,8 +27,7 @@ const InputContainer = styled.div`
   display: flex;
   justify-content: space-between;
   border: 1px solid lightgray;
-  ${mobile({ width:"80%" })}
-
+  ${mobile({ width: "80%" })}
 `;
 const Input = styled.input`
   border: none;
@@ -43,18 +42,26 @@ const Button = styled.button`
   cursor: pointer;
 `;
 const Newsletter = () => {
-  return (
-    <Container>
-      <Title>Newsletter</Title>
-      <Description>Get timely updates from your favorite Products.</Description>
-      <InputContainer>
-        <Input placeholder="Your email" />
-        <Button>
-          <SendIcon />
-        </Button>
-      </InputContainer>
-    </Container>
-  );
+  const history = useHistory();
+  const path = history.location.pathname;
+  if (path === "/login" || path === "/register") {
+    return <></>;
+  } else {
+    return (
+      <Container>
+        <Title>Newsletter</Title>
+        <Description>
+          Get timely updates from your favorite Products.
+        </Description>
+        <InputContainer>
+          <Input placeholder="Your email" />
+          <Button>
+            <SendIcon />
+          </Button>
+        </InputContainer>
+      </Container>
+    );
+  }
 };
 
 export default Newsletter;

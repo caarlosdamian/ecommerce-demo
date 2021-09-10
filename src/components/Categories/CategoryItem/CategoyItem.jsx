@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { mobile } from "../../../responsive";
 
@@ -11,8 +12,7 @@ const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  ${mobile({ height:"20vh" })}
-
+  ${mobile({ height: "20vh" })}
 `;
 const Info = styled.div`
   position: absolute;
@@ -44,7 +44,9 @@ const CategoyItem = ({ item }) => {
       <Image src={item.img} />
       <Info>
         <Title>{item.title}</Title>
-        <Button>SHOP NOW</Button>
+        <Link to='/products'>
+          <Button>SHOP NOW</Button>
+        </Link>
       </Info>
     </Container>
   );

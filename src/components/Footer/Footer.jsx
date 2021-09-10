@@ -7,10 +7,11 @@ import RoomIcon from "@material-ui/icons/Room";
 import PhoneIcon from "@material-ui/icons/Phone";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import { mobile } from "../../responsive";
+import Img from "../../utils/TouchofTech.png";
 const Container = styled.div`
   display: flex;
-  ${mobile({ flexDirection:"column" })}
-
+  ${mobile({ flexDirection: "column" })}
+  background-color:#ececec;
 `;
 const Left = styled.div`
   flex: 1;
@@ -18,7 +19,10 @@ const Left = styled.div`
   flex-direction: column;
   padding: 20px;
 `;
-const Logo = styled.h1``;
+const Logo = styled.img`
+  height: 50px;
+  width:200px;
+`;
 const Desc = styled.p`
   margin: 20px 0px;
 `;
@@ -39,8 +43,7 @@ const SocialIcon = styled.div`
 const Center = styled.div`
   flex: 1;
   padding: 20px;
-  ${mobile({ display:"none" })}
-
+  ${mobile({ display: "none" })}
 `;
 const Title = styled.h3`
   margin-bottom: 30px;
@@ -59,8 +62,7 @@ const ListItem = styled.li`
 const Right = styled.div`
   flex: 1;
   padding: 20px;
-  ${mobile({ backgroundColor:"#e2e0e0" })}
-
+  ${mobile({ backgroundColor: "#e2e0e0" })}
 `;
 const ContactItem = styled.div`
   margin-bottom: 20px;
@@ -74,7 +76,7 @@ const Footer = () => {
   return (
     <Container>
       <Left>
-        <Logo>TOT.</Logo>
+        <Logo src={Img} />
         <Desc>Working on several web projects give it a try work with us!</Desc>
         <SocialContainer>
           <SocialIcon color="3B5999">
@@ -116,7 +118,8 @@ const Footer = () => {
           <PhoneIcon style={{ marginRight: "10px" }} /> +1 234 56 78
         </ContactItem>
         <ContactItem>
-          <MailOutlineIcon style={{ marginRight: "10px" }} /> carlos@tocuhof.tech
+          <MailOutlineIcon style={{ marginRight: "10px" }} />{" "}
+          carlos@tocuhof.tech
         </ContactItem>
         <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" />
       </Right>
