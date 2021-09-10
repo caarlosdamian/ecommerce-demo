@@ -4,12 +4,15 @@ import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
 import { useState } from "react";
 import { sliderItems } from "../../utils/data";
+import {mobile} from '../../responsive'
 const Container = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
   position: relative;
   overflow: hidden;
+  ${mobile({ display:"none" })}
+
 `;
 const Arrow = styled.div`
   width: 50px;
